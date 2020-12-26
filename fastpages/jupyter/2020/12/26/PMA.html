@@ -4,9 +4,9 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="twitter:card" content="summary_large_image" /><!-- Begin Jekyll SEO tag v2.6.1 -->
-<title>PMA - Exercises Chapter 03 | fastpages</title>
+<title>PMA - Exercises Chapter 03 - Lab 01 | fastpages</title>
 <meta name="generator" content="Jekyll v4.1.1" />
-<meta property="og:title" content="PMA - Exercises Chapter 03" />
+<meta property="og:title" content="PMA - Exercises Chapter 03 - Lab 01" />
 <meta property="og:locale" content="en_US" />
 <meta name="description" content="Basic Dynamic Analysis" />
 <meta property="og:description" content="Basic Dynamic Analysis" />
@@ -17,7 +17,7 @@
 <meta property="og:type" content="article" />
 <meta property="article:published_time" content="2020-12-26T00:00:00-06:00" />
 <script type="application/ld+json">
-{"description":"Basic Dynamic Analysis","url":"https://greensnabl.github.io/blog/fastpages/jupyter/2020/12/26/PMA.html","@type":"BlogPosting","headline":"PMA - Exercises Chapter 03","dateModified":"2020-12-26T00:00:00-06:00","datePublished":"2020-12-26T00:00:00-06:00","image":"https://greensnabl.github.io/blog/images/some_folder/your_image.png","mainEntityOfPage":{"@type":"WebPage","@id":"https://greensnabl.github.io/blog/fastpages/jupyter/2020/12/26/PMA.html"},"@context":"https://schema.org"}</script>
+{"description":"Basic Dynamic Analysis","url":"https://greensnabl.github.io/blog/fastpages/jupyter/2020/12/26/PMA.html","@type":"BlogPosting","headline":"PMA - Exercises Chapter 03 - Lab 01","dateModified":"2020-12-26T00:00:00-06:00","datePublished":"2020-12-26T00:00:00-06:00","image":"https://greensnabl.github.io/blog/images/some_folder/your_image.png","mainEntityOfPage":{"@type":"WebPage","@id":"https://greensnabl.github.io/blog/fastpages/jupyter/2020/12/26/PMA.html"},"@context":"https://schema.org"}</script>
 <!-- End Jekyll SEO tag -->
 <link rel="stylesheet" href="/blog/assets/css/style.css"><link type="application/atom+xml" rel="alternate" href="https://greensnabl.github.io/blog/feed.xml" title="fastpages" /><link rel="shortcut icon" type="image/x-icon" href="/blog/images/favicon.ico"><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Primer/15.2.0/primer.css" integrity="sha512-xTz2ys4coGAOz8vuV1NcQBkgVmKhsSEtjbqyMJbBHRplFuvKIUo6xhLHpAyPt9mfR6twHJgn9OgVLuqOvjeBhg==" crossorigin="anonymous" />
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css" integrity="sha512-1PKOgIY59xJ8Co8+NE6FZ+LOAZKjy+KY8iq0G4B3CyeY6wYHN3yt9PW0XpSriVlkMXe40PTKnXrLnZ9+fkDaog==" crossorigin="anonymous" />
@@ -72,7 +72,7 @@ window.onload = wrap_img;
         <article class="post h-entry" itemscope itemtype="http://schema.org/BlogPosting">
 
   <header class="post-header">
-    <h1 class="post-title p-name" itemprop="name headline">PMA - Exercises Chapter 03 </h1><p class="page-description">Basic Dynamic Analysis</p><p class="post-meta post-meta-title"><time class="dt-published" datetime="2020-12-26T00:00:00-06:00" itemprop="datePublished">
+    <h1 class="post-title p-name" itemprop="name headline">PMA - Exercises Chapter 03 - Lab 01</h1><p class="page-description">Basic Dynamic Analysis</p><p class="post-meta post-meta-title"><time class="dt-published" datetime="2020-12-26T00:00:00-06:00" itemprop="datePublished">
         Dec 26, 2020
       </time>
        • <span class="read-time" title="Estimated read time">
@@ -127,8 +127,8 @@ window.onload = wrap_img;
 <li class="toc-entry toc-h3"><a href="#VirusTotal-Results">VirusTotal Results </a></li>
 <li class="toc-entry toc-h3"><a href="#strings.exe-Results">strings.exe Results </a></li>
 <li class="toc-entry toc-h3"><a href="#PEiD-Results">PEiD Results </a></li>
-<li class="toc-entry toc-h3"><a href="#DependencyWalker-Result">DependencyWalker Result </a></li>
 <li class="toc-entry toc-h3"><a href="#ResourceHacker-Result">ResourceHacker Result </a></li>
+<li class="toc-entry toc-h3"><a href="#DependencyWalker-Result">DependencyWalker Result </a></li>
 </ul>
 </li>
 </ul>
@@ -154,8 +154,11 @@ window.onload = wrap_img;
 <h3 id="VirusTotal-Results">
 <a class="anchor" href="#VirusTotal-Results" aria-hidden="true"><span class="octicon octicon-link"></span></a><code>VirusTotal</code> Results<a class="anchor-link" href="#VirusTotal-Results"> </a>
 </h3>
-<p><img src="/blog/images/copied_from_nb/img/pma/ch03/ex01_vt_01.png" alt=""></p>
+<p>VirusTotal already has a lot information about the given binary, which is not suprising since it's a practice binary provided by <code>Practical Malware Analysis</code>.</p>
+<p>The detection tab is overwhelmingly red and skimming through the outputs different scanners provided, it seems that the binary is a <code>Windows Trojan</code> known as <code>PoisonIvy</code>.</p>
 <p><img src="/blog/images/copied_from_nb/img/pma/ch03/ex01_vt_02.png" alt=""></p>
+<p>Looking at the <code>Behaviour</code> tab reveals different functionality found in the binary. A DNS request to resolve <code>www.practicalmalwareanalysis.com</code></p>
+<p><img src="/blog/images/copied_from_nb/img/pma/ch03/ex01_vt_01.png" alt=""></p>
 
 </div>
 </div>
@@ -166,7 +169,31 @@ window.onload = wrap_img;
 <h3 id="strings.exe-Results">
 <a class="anchor" href="#strings.exe-Results" aria-hidden="true"><span class="octicon octicon-link"></span></a><code>strings.exe</code> Results<a class="anchor-link" href="#strings.exe-Results"> </a>
 </h3>
+<p>Running <code>strings.exe</code> with default options will result in the following output. Here every string with length ≥ 3 will be registered and printed on stdout.</p>
 <p><img src="/blog/images/copied_from_nb/img/pma/ch03/ex01_str_01.png" alt=""></p>
+<p>We see that there are a lot of garbage strings and thus increase the minimal string length to 5 by providing the commandline option <code>-n 5</code>.</p>
+<p>The following three screenshots show the most interesting strings.</p>
+<p><img src="/blog/images/copied_from_nb/img/pma/ch03/ex01_str_02.png" alt=""></p>
+<p><img src="/blog/images/copied_from_nb/img/pma/ch03/ex01_str_03.png" alt=""></p>
+<p><img src="/blog/images/copied_from_nb/img/pma/ch03/ex01_str_04.png" alt=""></p>
+<p>We find</p>
+<ul>
+<li>Registry keys<ul>
+<li>AutoRun</li>
+<li>Shell / Commandline specific</li>
+</ul>
+</li>
+<li>Username <code>admin</code>
+</li>
+<li>An instruction to <code>CONNECT</code> to a given <code>string:int</code> → <code>hostname:port</code> combination via <code>HTTP/1.0</code>.</li>
+</ul>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
 <p><img src="/blog/images/copied_from_nb/img/pma/ch03/ex01_str_02.png" alt=""></p>
 <p><img src="/blog/images/copied_from_nb/img/pma/ch03/ex01_str_03.png" alt=""></p>
 <p><img src="/blog/images/copied_from_nb/img/pma/ch03/ex01_str_04.png" alt=""></p>
@@ -181,6 +208,18 @@ window.onload = wrap_img;
 <a class="anchor" href="#PEiD-Results" aria-hidden="true"><span class="octicon octicon-link"></span></a><code>PEiD</code> Results<a class="anchor-link" href="#PEiD-Results"> </a>
 </h3>
 <p><img src="/blog/images/copied_from_nb/img/pma/ch03/ex01_peid_01.png" alt=""></p>
+<p><img src="/blog/images/copied_from_nb/img/pma/ch03/ex01_peid_02.png" alt=""></p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="ResourceHacker-Result">
+<a class="anchor" href="#ResourceHacker-Result" aria-hidden="true"><span class="octicon octicon-link"></span></a><code>ResourceHacker</code> Result<a class="anchor-link" href="#ResourceHacker-Result"> </a>
+</h3>
+<p>Opening <code>Lab03_01.exe</code> with <code>ResourceHacker</code> does not provide any information. Which is obvious since the binary has no resource section.</p>
 
 </div>
 </div>
@@ -193,17 +232,6 @@ window.onload = wrap_img;
 </h3>
 <p>The analysis of <code>Lab03-01.exe</code> with <code>DependencyWalker</code> will reveal that the executable imports <code>KERNEL32.DLL</code> and makes use of the imported function <code>ExitProcess</code>, which is not very interesting.</p>
 <p><img src="/blog/images/copied_from_nb/img/pma/ch03/ex01_depwalk_01.png" alt=""></p>
-
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing text_cell rendered">
-<div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<h3 id="ResourceHacker-Result">
-<a class="anchor" href="#ResourceHacker-Result" aria-hidden="true"><span class="octicon octicon-link"></span></a><code>ResourceHacker</code> Result<a class="anchor-link" href="#ResourceHacker-Result"> </a>
-</h3>
-<p>Opening <code>Lab03_01.exe</code> with <code>ResourceHacker</code> does not provide any information.</p>
 
 </div>
 </div>
